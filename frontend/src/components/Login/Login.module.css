@@ -1,0 +1,22 @@
+.container {
+  padding: 1rem;
+  margin: 1rem;
+  border: 2px dashed #ccc;
+}
+
+.container > button{
+    margin: 10px 0;
+}
+
+.container>p{
+    font-size: 1.2rem;
+}
+
+.formElement{
+    margin:  10px 0;
+}
+
+.formElement > label {
+  display: block;
+  margin-bottom: 5px;
+}
