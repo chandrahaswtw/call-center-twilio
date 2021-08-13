@@ -11,13 +11,20 @@ app.use(express.urlencoded({ extended: false }));
 
 const PORT = 3001;
 
-app.get("/login", async(req, res)=>{
-    const data = await twilioObj.sendVerify("+919962533422", "sms");
+app.post("/login", async(req, res)=>{
+    const data = await twilioObj.sendVerify(req.body.to, req.body.channel);
+    res.send(data);
+ })
+
+ app.post("/test", async(req, res)=>{
+    const data = req.body;
+    console.log(req);
     res.send(data);
  })
  
- app.get("/verify", async(req, res)=>{
-     const data = await twilioObj.verifyCode("+919962533422", req.query.code);
+ app.post("/verify", async(req, res)=>{
+     const data = await twilioObj.verifyCode(req.body.to, req.body.code);
+     console.log(data.status);
      res.send(data);
   })
 
