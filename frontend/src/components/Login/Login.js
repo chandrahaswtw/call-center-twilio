@@ -34,7 +34,7 @@ function Login(props) {
 
   return (
     <div className={classes.container}>
-      <p>LOGIN FORM</p>
+      <p>LOGIN FORM </p>
       <div className={classes.formElement}>
         <label htmlFor="USERNAME">USERNAME</label>
         <input
